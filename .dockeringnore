@@ -1,0 +1,5 @@
+.venv
+.venv/*
+README.md
+conf.ini
+docker-build.sh
