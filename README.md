@@ -16,3 +16,23 @@ This README and software enable automated external blacklisting of ip addresses 
 * Edit `conf.ini`
 * Edit `blocklists.py`
 * Run `exabgp ./conf.ini`
+
+## Run the project inside a Docker container
+
+```bash
+# Clone repository
+git clone git@github.com:aweher/bgp-blocklist-feed.git
+cd bgp-blocklist-feed
+
+# Create config file and edit it according to your scenario
+cp example-conf.ini conf.ini
+vi conf.ini
+
+# Run the app
+docker run --name bgp-blocklist-feed \
+    --detach \
+    -p 179:179 \
+    -v $PWD/conf.ini:/app/conf.ini \
+    --restart unless-stopped \
+    aweher/bgp-blocklist-feed
+```
