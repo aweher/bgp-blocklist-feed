@@ -10,7 +10,7 @@ This README and software enable automated external blacklisting of ip addresses 
 
 * Create virtualenv `python3 -m venv .venv`
 * Activate virtualenv `source .venv/bin/activate`
-* Clone repo `git clone git@github.com:aweher/bgp-blocklist-feed.git`
+* Clone repo `git clone https://github.com/aweher/bgp-blocklist-feed.git`
 * Install prerequisites `pip install -r requirements.txt`
 * Copy example into config file `cp example-conf.ini conf.ini`.
 * Edit `conf.ini`
@@ -21,7 +21,7 @@ This README and software enable automated external blacklisting of ip addresses 
 
 ```bash
 # Clone repository
-git clone git@github.com:aweher/bgp-blocklist-feed.git
+git clone https://github.com/aweher/bgp-blocklist-feed.git
 cd bgp-blocklist-feed
 
 # Create config file and edit it according to your scenario
@@ -29,7 +29,7 @@ cp example-conf.ini conf.ini
 vi conf.ini
 
 # Run the app
-docker run --name bgp-blocklist-feed \
+docker run --name bgp \
     --detach \
     -p 179:179 \
     -v $PWD/conf.ini:/app/conf.ini \

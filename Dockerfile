@@ -6,5 +6,5 @@ LABEL author="Ariel S. Weher"
 WORKDIR /app
 EXPOSE 179
 COPY . .
-RUN pip3 install -r requirements.txt
-ENTRYPOINT [ "exabgp", "conf.ini"]
+RUN pip3 install -r requirements.txt && chmod 755 init.sh
+ENTRYPOINT [ "bash", "init.sh"]
